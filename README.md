@@ -10,7 +10,7 @@
 
 ## 功能结构
 
-<img src="doc/structure.png" style="zoom:40%;align-items:center" alt="image"/>
+<img src="doc/structure.png" style="zoom:20%;align-items:center" alt="image"/>
 
 ## 页面展示
 
@@ -18,17 +18,17 @@
 
 ### 主页
 
-<img src="doc/1.png" style="zoom:40%;" alt="image"/>
-<img src="doc/2.png" style="zoom:40%;" alt="image"/>
-<img src="doc/3.png" style="zoom:40%;" alt="image"/>
+<img src="doc/1.png" style="zoom:20%;" alt="image"/>
+<img src="doc/2.png" style="zoom:20%;" alt="image"/>
+<img src="doc/3.png" style="zoom:20%;" alt="image"/>
 
 ### 电台
 
-<img src="doc/4.png" style="zoom:40%;" alt="image"/>
+<img src="doc/4.png" style="zoom:20%;" alt="image"/>
 
 ### 播放
 
-<img src="doc/5.png" style="zoom:40%;" alt="image"/>
+<img src="doc/5.png" style="zoom:20%;" alt="image"/>
 
 ## 写在后面的未完善点
 
