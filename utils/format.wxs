@@ -1,0 +1,31 @@
+// 对count进行格式化
+function formatCount(count) {
+  count = Number(count)
+  if (count >= 100000000) {
+    return (count / 100000000).toFixed(1) + "亿"
+  } else if (count >= 10000) {
+    return (count / 10000).toFixed(1) + "万"
+  } else {
+    return count
+  }
+}
+
+// 对time进行格式化
+// 100 -> 01:40
+function formatTime(time) {
+  // 0.将毫秒转成秒
+  time = time / 1000
+
+  // 1.获取时间
+  var minute = Math.floor(time / 60)
+  var second = Math.floor(time) % 60
+
+  // 2.拼接字符串
+  return padLeft(minute) + ":" + padLeft(second)
+}
+
+// 必须导出后, 才能被其他地方调用: 必须使用CommonJS导出
+module.exports = {
+  formatCount: formatCount,
+  formatTime: formatTime,
+}

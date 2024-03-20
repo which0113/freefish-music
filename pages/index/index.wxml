@@ -1,0 +1,150 @@
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
+<!-- 首页 -->
+<van-search value="{{ value }}" shape="round" placeholder="搜索歌曲哦~" />
+<!-- 轮播图 -->
+<view style="display: flex; justify-content: center;">
+  <swiper class='lunbo' circular="true" indicator-dots='true' autoplay='true' interval='4000'>
+    <swiper-item wx:for="{{lunbo}}" wx:key="index">
+      <image src="{{item.imageUrl}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<van-tabs animated title-active-color="#da3231">
+  <!-- 歌曲 -->
+  <van-tab title="歌曲">
+    <!-- 分割线 -->
+    <van-divider />
+    <!-- 弹窗 -->
+    <van-popup close-icon-position="top-left" closeable="{{true}}" close-icon="/static/music/back.png" show="{{ show }}" position="bottom" custom-style="height: 80%" round bind:close="onClose" safe-area-inset-bottom="{{false}}">
+      <view class="v-popup">
+        <!-- 背景图片 -->
+        <!-- <image class="bg-image" src="{{popupPicture}}" mode="aspectFill"></image>
+    <view class="bg-cover"></view> -->
+        <!-- 歌曲图片外圈 -->
+        <view class="wq">
+          <van-image class="i1" round width="16rem" height="16rem" src="/static/icons/1.png" />
+          <van-image wx:if="{{!buttonStates[index]}}" class="i2-a" width="11rem" height="16rem" src="/static/icons/2.png" show-loading="{{false}}" />
+          <van-image wx:else class="i2-p" width="11rem" height="16rem" src="/static/icons/2.png" show-loading="{{false}}" />
+        </view>
+        <!-- 歌曲图片旋转 -->
+        <view class="img_p">
+          <!-- 不旋转（默认） -->
+          <van-image wx:if="{{!buttonStates[index]}}" class="active" round width="10rem" height="10rem" src="{{popupPicture}}" show-loading="{{false}}" />
+          <!-- 旋转 -->
+          <van-image wx:else class="pause" round width="10rem" height="10rem" src="{{popupPicture}}" show-loading="{{false}}" />
+        </view>
+        <!-- 歌词部分 -->
+        <view class="geci_p">
+          <view class="per">
+            {{musicTJ[index].name}} - {{musicTJ[index].song.artists[0].name}}
+          </view>
+        </view>
+        <view class="www">
+          <view class="lyric">
+            {{currentLyricText}}hhhhhhhh 111
+          </view>
+          <view class="progress">
+            <slider class="slider" block-size="12" value="{{sliderValue}}" bindchange="onSliderChange" bindchanging="onSliderChanging" />
+            <view class="time">
+              <view class="current">{{fmt.formatTime(currentTime)}}000</view>
+              <view class="duration">{{fmt.formatTime(durationTime)}}111</view>
+            </view>
+          </view>
+        </view>
+        <!-- 歌曲操作 -->
+        <view class="playAndPause_p">
+          <button hover-class="hover_F" plain="true" style="border-style:none;">
+            <image class="playF" src="/static/music/xh.png" style="width: 30px; height: 30px; padding-top: 15px;"></image>
+          </button>
+          <!-- playF -->
+          <button data-index="{{index}}" hover-class="hover_F" plain="true" style="border-style:none;" bindtap="on_F">
+            <image class="playF" src="/static/music/playF.png" style="width: 30px; height: 30px; padding-top: 15px;"></image>
+          </button>
+          <!-- play and pause -->
+          <button data-index="{{index}}" hover-class="hover_btn" plain="true" bindtap="onButtonTap" style="border-style:none; padding-top: 15px;">
+            <image wx:if="{{buttonStates[index]}}" src="{{play}}" style="width: 60px; height: 60px;"></image>
+            <image wx:else src="{{pause}}" style="width: 60px; height: 60px;">
+            </image>
+          </button>
+          <!-- playB -->
+          <button data-index="{{index}}" hover-class="hover_B" plain="true" style="border-style:none;" bindtap="on_B">
+            <image class="playB" src="/static/music/playB.png" style="width: 30px; height: 30px; padding-top: 15px;"></image>
+          </button>
+          <button hover-class="hover_B" plain="true" style="border-style:none;">
+            <image class="playB" src="/static/music/lb.png" style="width: 30px; height: 30px; padding-top: 15px;"></image>
+          </button>
+        </view>
+      </view>
+    </van-popup>
+    <!-- 歌曲推荐 -->
+    <block>
+      <van-cell title="歌曲推荐" style="font-weight: bold;" border="{{ false }}" value="更多" isLink />
+      <view class="card-container" wx:for="{{musicTJ}}">
+        <!-- music -->
+        <van-card data-index="{{item.type}}" bindtap="showPopup" class="van-card-full" thumb="{{item.picUrl}}" title="{{item.name}}" tag="{{tagList[index]}}" desc="{{item.song.artists[0].name}}" centered="{{true}}" title-class="title-class">
+          <text slot="price" class="text-zj">
+            专辑: {{item.song.album.name}}
+          </text>
+        </van-card>
+        <!-- play -->
+        <button data-index="{{item.type}}" hover-class="hover_btn" class="play" plain="true" bindtap="onButtonTap" style="border-style: none;">
+          <!-- play and pause -->
+          <image wx:if="{{buttonStates[item.type]}}" src="{{play}}" style="width: 40px; height: 40px;"></image>
+          <image wx:else src="{{pause}}" style="width: 40px; height: 40px;">
+          </image>
+        </button>
+      </view>
+    </block>
+    <!-- 精品歌单 -->
+    <block>
+      <van-cell title="精品歌单" style="font-weight: bold;" border="{{ false }}" value="更多" isLink />
+      <view wx:for="{{veryMusicList}}" class="gd">
+        <image src="{{item.coverImgUrl}}" class="gd-image"></image>
+        <view class="count">
+          <van-icon name="audio" />
+          <text> {{fmt.formatCount(item.playCount)}}</text>
+        </view>
+        <view class="text-overflow-gd">{{item.name}}</view>
+      </view>
+    </block>
+    <!-- 排行榜 -->
+    <block>
+      <van-cell title="排行榜" style="font-weight: bold;" border="{{ false }}" />
+      <view class="ranking">
+        <block wx:for="{{ musicPHB }}" wx:key="index">
+          <view class="ranking-item">
+            <view class="content">
+              <view class="name">{{item.name}}</view>
+              <view class="list">
+                <block wx:for="{{item.tracks}}" wx:key="index">
+                  <view class="item">
+                    <text>{{index + 1}}.</text>
+                    <text>{{item.first}}</text>
+                    <text class="singer"> - {{item.second}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+            <view class="album">
+              <image class="image" src="{{item.coverImgUrl}}"></image>
+              <view class="count">
+                <van-icon name="fire" class="icon-fire" />
+                <text> {{fmt.formatCount(item.subscribedCount)}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <!-- 电台 -->
+  <van-tab title="电台">
+    <van-divider />
+    <!-- 热门 -->
+    <van-cell title="热门" style="font-weight: bold;" border="{{ false }}" />
+    <view wx:for="{{hotDJ}}" class="dt">
+      <image src="{{item.dj.backgroundUrl}}" class="dt-image"></image>
+      <view class="text-overflow-dj">{{item.rcmdtext}}</view>
+    </view>
+  </van-tab>
+</van-tabs>

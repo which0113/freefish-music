@@ -1,0 +1,403 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.van-card-full .van-card {
+  background-color: white;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.play {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-right: 0;
+}
+
+/* 点击效果 */
+.hover_btn {
+  position: relative;
+  top: 3rpx;
+}
+
+/* .bg-image,
+.bg-cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg-cover {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+} */
+
+.title-class {
+  display: -webkit-box;
+  /* 显示一行 */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px !important;
+  width: 200px;
+}
+
+.img_p {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 100%;
+  margin-top: -24.5%;
+}
+
+.i1 {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 100%;
+  margin-top: 20%;
+  z-index: 2;
+}
+
+.wq .i2-a {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 100%;
+  margin-top: -100%;
+  margin-left: 34%;
+  animation: rotate1 2s linear 1;
+  /* 当按钮状态为 true 时，播放动画 */
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+.wq .i2-p {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 100%;
+  margin-top: -100%;
+  margin-left: 34%;
+  animation: rotate1 2s linear 1;
+  /* 初始状态为暂停  */
+  animation-play-state: paused;
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+
+  to {
+    transform: rotate(5deg);
+    transform-origin: top left;
+  }
+}
+
+.img_p .pause {
+  margin-top: 5%;
+  animation: rotate 5s linear infinite;
+  /* 初始状态为暂停  */
+  animation-play-state: paused;
+  z-index: 1;
+}
+
+.img_p .active {
+  margin-top: 5%;
+  animation: rotate 5s linear infinite;
+  /* 当按钮状态为 true 时，播放动画 */
+  animation-play-state: running;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.img_p .van-button {
+  display: flex;
+  justify-content: center;
+}
+
+.geci_p {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.playAndPause_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  width: 96%;
+  margin-left: 2%;
+  position: fixed;
+  bottom: 0;
+}
+
+.lunbo {
+  width: 100%;
+  max-width: 423px;
+}
+
+.lunbo image {
+  border-radius: 15px;
+  width: 92%;
+  max-width: 100%;
+  height: 100%;
+  margin-left: 4%;
+}
+
+.playF,
+.playB {
+  margin-top: 0%;
+}
+
+.hover_F {
+  position: relative;
+  top: 3rpx;
+}
+
+.hover_B {
+  position: relative;
+  top: 3rpx;
+}
+
+.cell-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  border: 1px solid gray;
+  border-radius: 15px;
+  margin-left: 70%;
+  font-size: 10px;
+}
+
+.title-class {
+  font-size: 20px;
+}
+
+.sort-music {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.dt {
+  display: inline-block;
+  width: 110px;
+  height: 150px;
+  margin-left: 15px;
+}
+
+.text-zj {
+  display: -webkit-box;
+  /* 显示二行 */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  width: 200px;
+}
+
+.text-overflow-dj {
+  display: -webkit-box;
+  /* 显示一行 */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.text-overflow-gd {
+  display: -webkit-box;
+  /* 显示二行 */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.dt-image {
+  border-radius: 15px;
+  width: 110px;
+  height: 110px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 5px 10px;
+}
+
+.gd {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 150px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.gd-image {
+  border-radius: 15px;
+  width: 110px;
+  height: 110px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 5px 10px;
+  background-size: cover;
+}
+
+.count {
+  position: absolute;
+  right: 0;
+  bottom: 77rpx;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 20rpx;
+  padding: 6rpx 10rpx;
+  background: rgba(0, 0, 0, .5);
+}
+
+/* 排行榜 */
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 12rpx;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 92%;
+  max-width: 100%;
+  margin-left: 4%;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 5px 5px;
+}
+
+.content {
+  padding: 24rpx;
+  overflow: hidden;
+}
+
+.content .name {
+  font-size: 34rpx;
+}
+
+.content .list {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+
+.content .list .item {
+  color: #333;
+  margin-top: 6rpx;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.content-list-item .singer {
+  color: #999;
+}
+
+.album {
+  position: relative;
+  display: flex;
+}
+
+.album .image {
+  width: 220rpx;
+  height: 220rpx;
+  background-size: cover;
+}
+
+.album .count {
+  position: absolute;
+  right: 0;
+  bottom: 0rpx;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 12rpx;
+  padding: 6rpx 10rpx;
+  background: rgba(0, 0, 0, .5);
+}
+
+.count .icon-fire {
+  margin-right: 5rpx;
+}
+
+.per {
+  text-align: center;
+  height: 50rpx;
+  margin: 16rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 30px;
+}
+
+.lyric {
+  text-align: center;
+  height: 36rpx;
+  margin: 16rpx 0;
+  color: #31c27c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress {
+  margin: 40rpx 0;
+}
+
+.slider {
+  margin: 16rpx 8rpx 10rpx 18rpx;
+}
+
+.www {
+  width: 86%;
+  margin: auto;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
