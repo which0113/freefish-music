@@ -10,7 +10,9 @@
 
 ## 功能结构
 
-<img src="doc/structure.png" style="zoom:20%;align-items:center" alt="image"/>
+<div align=center>
+<img src="doc/structure.png" width=500 alt="image"/>
+</div>
 
 ## 页面展示
 
@@ -18,21 +20,27 @@
 
 ### 主页
 
-<img src="doc/1.png" style="zoom:20%;" alt="image"/>
-<img src="doc/2.png" style="zoom:20%;" alt="image"/>
-<img src="doc/3.png" style="zoom:20%;" alt="image"/>
+<div align=center>
+<img src="doc/1.png" width=300 alt="image"/>
+<img src="doc/2.png" width=300 alt="image"/>
+<img src="doc/3.png" width=300 alt="image"/>
+</div>
 
 ### 电台
 
-<img src="doc/4.png" style="zoom:20%;" alt="image"/>
+<div align=center>
+<img src="doc/4.png" width=300 alt="image"/>
+</div>
 
 ### 播放
 
-<img src="doc/5.png" style="zoom:20%;" alt="image"/>
+<div align=center>
+<img src="doc/5.png" width=300 alt="image"/>
+</div>
 
 ## 写在后面的未完善点
 
 1. 其他机型未适配
 2. 未接入后端服务
 3. 歌词功能未展示
-4. ...
+4. ......
