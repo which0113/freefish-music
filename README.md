@@ -3,6 +3,7 @@
 </p>
 <h1 align="center">FreeFish-Music</h1>
 <p align="center"><strong>一个极简的音乐微信小程序</strong></p>
+<p align="center"><strong>欢迎 star ~ 后续更新</strong></p>
 
 ## 项目介绍
 
