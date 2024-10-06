@@ -1,5 +1,5 @@
 <p align="center">
-    <img src=https://img.freefish.love/logo.png width=188/>
+    <img src=doc/logo.png width=188/>
 </p>
 <h1 align="center">FreeFish-Music</h1>
 <p align="center"><strong>一个极简的音乐微信小程序</strong></p>
